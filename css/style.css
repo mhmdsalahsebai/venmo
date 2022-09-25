@@ -15,7 +15,7 @@ body {
 }
 
 .container {
-    width: 70%;
+    width: 75%;
     margin: 0 auto;
 }
 
@@ -23,13 +23,31 @@ h1, h2, h3 {
     color: #000;
 }
 
+.btn {
+    background-color: #fff;
+    border-radius: 4rem;
+    border: 1px solid #2f3033;
+    color: #000;
+    font-weight: 500;
+    font-size: 14px;
+    padding: 12px 32px;
+    cursor: pointer;
+    box-shadow: 8px 8px 0px rgba(0,215,145,.7);
+    transition: all 0.1.5s ease-in-out;
+}
+
+.btn:hover {
+    background-color: #0074de;
+    border-color: #0074de;
+    box-shadow: unset;
+    color: #FFF;
+}
+
 /* MAIN HEADER */
 
 .main-header {
     background-color: #F2F9FF;
-    padding-bottom: 192px;
 }
-
 
 /* main nav */
 
@@ -53,6 +71,10 @@ h1, h2, h3 {
     list-style: none;
 }
 
+.nav-item {
+    cursor: pointer;
+}
+
 .nav-link:visited,
 .nav-link:active,
 .nav-link:hover,
@@ -61,19 +83,13 @@ h1, h2, h3 {
     text-decoration: none;
 }
 
-.btn {
-    background-color: #fff;
-    border-radius: 4rem;
-    border: 1px solid #2f3033;
-    color: #000;
-    font-weight: 500;
-    font-size: 14px;
-    padding: 12px 32px;
-    cursor: pointer;
+.nav-link {
+    margin-right: 8px;
+    position: relative;
 }
 
-.btn:hover {
-    background-color: rgba(0,140,255,.1);
+.link-icon svg path {
+    stroke: #008cff;
 }
 
 .btn svg {
@@ -81,9 +97,73 @@ h1, h2, h3 {
     height: 14px;
 }
 
-.btn svg path {
+.btn-get-venmo {
+    box-shadow: unset;
+    background-color: #fff;
+
+}
+
+.btn-get-venmo:hover {
+    background-color: rgba(0,140,255,.1);
+    border-color:  #2f3033;
+    color: #000;
+}
+.btn-get-venmo svg  path {
     fill: #008cff;
     stroke: #008cff;
+}
+
+
+.btn-get-venmo:hover .btn-get-venmo svg  path{
+    fill: #fff;
+    stroke: #fff;
+}
+
+/* drobdown */
+
+.drob-down {
+    position: absolute;
+    top: 96px;
+    display: none;
+}
+
+.drob-list::before {
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-25%);
+    border-bottom: solid 10px #fff; /* Creates the arrow pointing up, to change to a notch instead user border-top */
+    border-left: solid 10px transparent; /* Creates triangle effect */
+    border-right: solid 10px transparent; 
+}
+
+.drob-list {
+    list-style: none;
+    background-color: #fff;
+    padding: 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    border-radius: 24px;
+    box-shadow: 0 0 2rem rgba(0,0,0,.1);
+}
+
+.drob-link:visited,
+.drob-link:active,
+.drob-link:hover,
+.drob-link {
+    color: #000;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.drob-link:hover {
+    background-color: #F2F9FF;
 }
 
 /* main hero */
@@ -94,9 +174,9 @@ h1, h2, h3 {
 }
 
 .flex-g {
-    display: grid;
-    grid-template-columns: 2fr 3fr;
+    display: flex;
     gap: 64px;
+    align-items: center;
 }
 
 .main-hero h1 {
@@ -107,35 +187,18 @@ h1, h2, h3 {
 
 .main-hero p {
     margin-bottom: 24px;
+    font-size: 20px;
 }
 
 .btn-get-started {
     background-color: #008cff;
-    border-color: #008cff;
     color: #FFF;
-}
-
-.btn-get-started:hover {
-    background-color: #0074de;
+    border-color: #008cff;
 }
 
 .btn-get-started svg path {
     fill: #fff;
     stroke: #fff;
-}
-
-.hero-second {
-    text-align: right;
-}
-
-.second-content {
-    position: relative;
-    height: 100%;
-}
-
-.second-content img {
-    position: absolute;
-    right: -100px;
 }
 
 /* /MAIN HEADER */
@@ -239,6 +302,7 @@ main {
 
 .article-w-btn .text {
     margin-bottom: 48px;
+    font-size: 20px;
 }
 
 .animate {
@@ -247,11 +311,26 @@ main {
 }
 
 .animat-img {
-    width: 128px;
+    width: 140px;
     position: absolute;
     right: 0;
     top: -20px;
 }
+
+.animat-img img {
+    animation: .5s linear 1s infinite alternate zoom;
+}
+
+@keyframes zoom {
+    from {
+      /* pushes the sun down past the viewport */
+      width: 128px;
+    }
+    to {
+      /* returns the sun to its default position */
+      width: 140px;
+    }
+  }
 
 /* /ARTICLES */
 
@@ -277,10 +356,6 @@ main {
 .info-text {
     font-size: 18px;
     margin-bottom: 32px;
-}
-
-.second {
-    text-align: right;
 }
 
 .info-img {
