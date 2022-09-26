@@ -39,8 +39,20 @@ h1, h2, h3 {
 .btn:hover {
     background-color: #0074de;
     border-color: #0074de;
-    box-shadow: unset;
+    box-shadow:  0 0 0;
     color: #FFF;
+}
+
+.btn-bink {
+    box-shadow: 8px 8px 0px #ff5fa0;
+}
+
+.btn-org {
+    box-shadow: 8px 8px 0px #af50dc;;
+}
+
+.btn-prim {
+    box-shadow: 8px 8px 0px #0074de
 }
 
 /* MAIN HEADER */
@@ -337,45 +349,63 @@ main {
 /* INFO */
 
 .info {
-    padding: 128px 0;
+    padding: 64px 0 192px 0;
 }
 
 .info-item {
-    display: grid;
-    grid-template-columns: 2.5fr 3fr;
-    gap: 64px;
+    display: flex;
+    align-items: center;
+    gap: 96px;
     margin-top: 96px;
 }
 
 .info-title {
-    font-size: 48px;
+    font-size: 32px;
     font-weight: 400;
     margin-bottom: 32px;
 }
 
 .info-text {
     font-size: 18px;
-    margin-bottom: 32px;
+    line-height: 1.5;
 }
 
 .info-img {
-    width: 100%;
+    width: 192px;
 }
 
-small {
+.info small {
     display: inline-block;
-    margin-bottom: 32px;
+    margin-top: 16px;
+}
 
+.info .btn {
+    margin-top: 32px;
 }
 
 /* call to action */
 
+.action-img {
+    position: relative;
+}
+
 .action-img img {
+    position: relative;
     width: 100%;
 }
 
+.action-underlay {
+    background-position: center;
+    background-repeat: repeat;
+    width: 100%;
+    height: 500px;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+}
+
 .action-text {
-    margin-top: 48px;
+    margin-top: 128px;
     display: flex;
     gap: 48px;
 }
@@ -391,14 +421,15 @@ small {
     font-size: 20px;
 }
 
-/* hero */
+/* footer */
 
-.hero {
-    background-color: #F2F9FF;
-    padding: 128px 0;
-    padding-left: 96px;
+footer {
+    text-align: center;
+    padding-bottom: 48px;
 }
 
-.hero img {
-    width: 100%;
+footer a {
+    color: #000;
+    font-weight: bold;
+    text-decoration: none;
 }
